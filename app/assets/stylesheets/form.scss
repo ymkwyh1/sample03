@@ -1,0 +1,30 @@
+@import './variables'; 
+
+input, select {
+    &.text {
+        width: 100%;
+        margin: 8px 0px;
+        padding: 16px 24px;
+        border: none;
+        border-bottom:1px solid $text-base-color ;
+        height: 30px;
+    }
+}
+
+    label {
+        font-size: 12px;
+    }
+
+    textarea{
+        width: 100%;
+        margin: 8px 0px;
+        padding: 8px 8px;
+        min-height: 440px;
+        resize: vertical;
+        border: 1px solid #EBEBEB;
+        border-radius: 5px;
+    }
+
+    .field{
+        margin-bottom: 20px;
+    }
