@@ -1,0 +1,23 @@
+<%= form_with(model: , url:, method: '', local: true) do |f| %>
+
+    <div class="post_newHeader">
+        <%= link_to root_path do %>
+            <p class="back">←</p>
+        <% end %>
+        <%= f.submit 'Post' %>
+    </div>
+
+    <div>
+        <div>
+            <div class="post_newAvatar">
+                <%= image_tag 'ellipse.png' %>
+            </div>
+            <div class="post_newUserid">    
+                <%= current_user.userid %>
+            </div>
+        </div>
+    <div>
+
+    <%= f.text_field :content, placeholder: "What's on our mind?"%>
+
+<% end %>
