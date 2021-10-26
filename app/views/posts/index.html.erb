@@ -1,10 +1,25 @@
 <div class="container">
     <div class="home_header">
-        <%= link_to new_post_path do %>
+        <%= link_to new_user_post_path(user_id: current_user.id) do %>
             <i class="fab fa-instagram"></i>
         <% end %>
         <%= link_to user_path(id: current_user.id) do %>
             <p>→</p>
-        <% end  %>
+        <% end %>
     </div>
+
+   <div class="home_content">
+        <% @posts.each do |post| %>
+            <div>
+            <% if post&.picture&.attached? %>
+                <%= image_tag post.picture, class: 'picture' %>
+            <% end %>
+            <%= post.content %>
+            </div>
+        <% end %>
+    </div>
+
+ 
+
 </div>
+

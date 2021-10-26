@@ -1,23 +1,26 @@
-<%= form_with(model: , url:, method: '', local: true) do |f| %>
+<div class="container">
+    <%= form_with(model: @post , url: user_posts_path(user_id: current_user.id), method: 'post', local: true) do |f| %>
 
-    <div class="post_newHeader">
-        <%= link_to root_path do %>
-            <p class="back">←</p>
-        <% end %>
-        <%= f.submit 'Post' %>
-    </div>
+        <div class="post_newHeader">
+            <%= link_to root_path do %>
+                <p class="back">←</p>
+            <% end %>
+            <%= f.submit 'Post', class: 'post_newSubmit' %>
+        </div>
 
-    <div>
-        <div>
+        
+        <div class="post_newDetail">
             <div class="post_newAvatar">
                 <%= image_tag 'ellipse.png' %>
             </div>
-            <div class="post_newUserid">    
-                <%= current_user.userid %>
+            <div class="post_newUsername">    
+                <%= current_user.username %>
             </div>
         </div>
-    <div>
 
-    <%= f.text_field :content, placeholder: "What's on our mind?"%>
+        <%= f.text_field :content, placeholder: "What's on our mind?", class: "post_newInput" %>
 
-<% end %>
+        <%= f.file_field :picture %>
+
+    <% end %>
+</div>
