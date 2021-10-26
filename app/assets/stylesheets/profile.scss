@@ -1,0 +1,44 @@
+/* user#show */
+
+$avatar-size: 80px;
+
+.profile{
+    
+    &_header{
+        position: relative;
+    }
+
+    &_username{
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &_back{
+        position: absolute;
+        color:black;
+        font-size: 1.5em;
+        top:-6px;
+    }
+
+    &_content{
+        text-align: center;
+        img{
+            margin-top: 30px;
+            height: $avatar-size;
+            width: $avatar-size;
+        }
+    }
+
+    &_detail{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: flex;
+
+        .block{
+            width: 33%;
+        }
+
+    }
+
+}
