@@ -1,0 +1,17 @@
+.card{
+
+    display: flex;
+    margin-top: 15px;
+
+    &_avatar{
+        height: 50px;
+        width: 50px;
+    }
+
+    &_username{
+        margin-left: 15px;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+}

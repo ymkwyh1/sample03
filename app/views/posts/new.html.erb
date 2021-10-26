@@ -8,15 +8,7 @@
             <%= f.submit 'Post', class: 'post_newSubmit' %>
         </div>
 
-        
-        <div class="post_newDetail">
-            <div class="post_newAvatar">
-                <%= image_tag 'ellipse.png' %>
-            </div>
-            <div class="post_newUsername">    
-                <%= current_user.username %>
-            </div>
-        </div>
+        <%= render 'commons/card', user: current_user %>
 
         <%= f.text_field :content, placeholder: "What's on our mind?", class: "post_newInput" %>
 

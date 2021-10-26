@@ -9,7 +9,7 @@
     <div class="profile_content">
         <%= image_tag 'ellipse.png' %>
         <p><%= current_user.username %></p>
-        <p>aaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <p class="profile_introduction">大阪大学外国語学部2年</p>
         <div class="profile_detail">
             <div class="block">
                 <h4>44</h4>
@@ -25,5 +25,13 @@
             </div>
         </div>
     </div>
+
+    <div class="profile_pictures">
+        <% @posts.each do |post| %>
+            <%= image_tag post.picture, class: 'profile_picture' %>
+        <% end %>
+    </div>
+
+
 </div>
 

@@ -8,18 +8,16 @@
         <% end %>
     </div>
 
-   <div class="home_content">
+    <div class="home_content">
         <% @posts.each do |post| %>
+            <%= render 'commons/card', user: post.user %>
             <div>
-            <% if post&.picture&.attached? %>
                 <%= image_tag post.picture, class: 'picture' %>
-            <% end %>
-            <%= post.content %>
+                <%= post.content %>
             </div>
         <% end %>
     </div>
 
- 
 
 </div>
 
