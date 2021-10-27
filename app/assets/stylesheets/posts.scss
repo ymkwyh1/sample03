@@ -1,3 +1,9 @@
+@import 'variables';
+
+.post{
+    position: relative;
+}
+
 .post_new{
 
     &Header{
@@ -17,11 +23,6 @@
 
     &Submit{
         border: none;
-    }
-
-    &_userAvatar{
-        height: $avatar-size;
-        width: $avatar-size;
     }
 
     }

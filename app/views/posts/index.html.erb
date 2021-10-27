@@ -1,6 +1,6 @@
-<div class="container">
+d<div class="container">
     <div class="home_header">
-        <%= link_to new_user_post_path(user_id: current_user.id) do %>
+        <%= link_to new_post_path do %>
             <i class="fab fa-instagram"></i>
         <% end %>
         <%= link_to user_path(id: current_user.id) do %>
@@ -10,10 +10,19 @@
 
     <div class="home_content">
         <% @posts.each do |post| %>
-            <%= render 'commons/card', user: post.user %>
-            <div>
-                <%= image_tag post.picture, class: 'picture' %>
-                <%= post.content %>
+            <div class="post">
+                <%= render 'commons/card', user: post.user %>
+                <div class="dropdown_post">
+                    <%= image_tag 'actions.svg', class: 'dropbtn' %>
+                    <div class="dropdown-content mini">
+                        <%= link_to 'Edit', edit_post_path(id: post.id) %>
+                        <%= link_to 'Delete', post_path(id: post.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
+                    </div>
+                </div>
+                <div>
+                    <%= image_tag post.picture, class: 'picture' %>
+                    <%= post.content %>
+                </div>
             </div>
         <% end %>
     </div>
