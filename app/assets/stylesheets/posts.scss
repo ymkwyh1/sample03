@@ -2,6 +2,7 @@
 
 .post{
     position: relative;
+    margin-bottom: 50px;
 }
 
 .post{
@@ -29,4 +30,10 @@
         font-weight: bold;
     }
 
+    &_content{
+        text-align: left;
+        margin-top: 15px;
+    }
+
+  
     }

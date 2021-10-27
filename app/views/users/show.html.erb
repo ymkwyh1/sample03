@@ -10,9 +10,10 @@
         <%= image_tag 'ellipse.png' %>
         <p><%= current_user.username %></p>
         <p class="profile_introduction">大阪大学外国語学部2年</p>
+        <p class="profile_edit">Edit profile</p>
         <div class="profile_detail">
             <div class="block">
-                <h4>0</h4>
+                <h4><%= @posts.count %></h4>
                 <p>Posts</p>
             </div>
             <div class="block">
@@ -28,7 +29,9 @@
 
     <div class="profile_pictures">
         <% @posts.each do |post| %>
-            <%= image_tag post.picture, class: 'profile_picture' %>
+            <%= link_to user_timeline_path(user_id: post.user.id) do %>
+                <%= image_tag post.picture, class: 'profile_picture' %>
+            <% end %>
         <% end %>
     </div>
 
