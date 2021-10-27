@@ -1,0 +1,21 @@
+<div class="container">
+    <%= form_with(model: @post, local: true) do |f| %>
+
+        <div class="post_header">
+            <%= link_to root_path do %>
+                <p class="back">←</p>
+            <% end %>
+            <%= f.submit 'Post', class: 'post_submit' %>
+        </div>
+
+        <%= render 'commons/card', user: current_user %>
+
+        <%= f.text_field :content, placeholder: "What's on our mind?", class: "post_input" %>
+
+        <label class="label_picture">
+        ＋ Album
+        <%= f.file_field :picture %>
+        </label>
+
+    <% end %>
+</div>

@@ -1,0 +1,66 @@
+@import './variables';
+
+.card{
+
+    display: flex;
+    margin-top: 15px;
+
+    &_avatar{
+        height: 50px;
+        width: 50px;
+    }
+
+    &_username{
+        margin-left: 15px;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+}
+
+.dropbtn {
+    border: none;
+}
+
+.dropdown {
+    display: inline-block;
+
+    &_post{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+}
+
+
+.dropdown-content {
+    font-weight: normal;
+    display: none;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    &.mini{
+        min-width: 100px;
+    }
+}
+
+.dropdown-content a {
+    padding: 1px 16px;
+    text-decoration: none;
+    display: block;
+    color: $text-base-color;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+}
+
+.dropdown_post:hover .dropdown-content {
+    display: block;
+}

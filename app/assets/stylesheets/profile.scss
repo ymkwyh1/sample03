@@ -41,4 +41,19 @@ $avatar-size: 80px;
 
     }
 
+    &_pictures{
+        margin-top: 30px;
+    }
+
+    &_picture{
+        width: 29vw;
+        height: 29vw;
+        object-fit: cover;
+    }
+
+    &_introduction{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
 }

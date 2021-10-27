@@ -1,0 +1,36 @@
+/* home#index */
+
+.home{
+    &_header{
+        font-size: 24px;
+        display: flex;
+        justify-content: space-between;
+        height: 24px;
+        margin-bottom: 30px;
+    
+        i{
+            font-size: 36px;
+            margin-top: -5px;
+        }
+
+        p{
+            margin-top: -5px;
+            color:black;
+        }
+    }
+
+    &_content{
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+        
+        .picture{
+            width: 90vw;
+            height: 90vw;
+            object-fit: cover;
+            margin-bottom: 50px;
+            margin-top: 10px;
+        }
+
+    }
+}

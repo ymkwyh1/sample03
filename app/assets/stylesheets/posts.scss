@@ -1,0 +1,32 @@
+@import 'variables';
+
+.post{
+    position: relative;
+}
+
+.post{
+
+    &_header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &_input{
+        width: 100%;
+        margin-top: 30px;
+        border: none;
+        border-bottom: 1px solid $text-base-color;
+        margin-bottom: 100px;
+        font-size: 18px;
+    }
+
+    &_submit{
+        border: none;
+        background-color: white;
+        font-size: 16px;
+        color: #2F80ED;
+        font-weight: bold;
+    }
+
+    }
