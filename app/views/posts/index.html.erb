@@ -7,26 +7,6 @@
             <p>→</p>
         <% end %>
     </div>
-
-    <div class="home_content">
-        <% @posts.each do |post| %>
-            <div class="post">
-                <%= render 'commons/card', user: post.user %>
-                <div class="dropdown_post">
-                    <%= image_tag 'actions.svg', class: 'dropbtn' %>
-                    <div class="dropdown-content mini">
-                        <%= link_to 'Edit', edit_post_path(id: post.id) %>
-                        <%= link_to 'Delete', post_path(id: post.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
-                    </div>
-                </div>
-                <div>
-                    <%= image_tag post.picture, class: 'picture' %>
-                    <%= post.content %>
-                </div>
-            </div>
-        <% end %>
-    </div>
-
-
+    <%= render 'commons/posts' %>
 </div>
 

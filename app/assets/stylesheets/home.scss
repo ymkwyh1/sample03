@@ -28,9 +28,17 @@
             width: 90vw;
             height: 90vw;
             object-fit: cover;
-            margin-bottom: 50px;
-            margin-top: 10px;
+            margin-bottom: 15px;
+            margin-top: 15px;
         }
 
+    }
+}
+
+.buttons{
+    display: flex;
+    width:35%;
+    img{
+        margin-right: 18px
     }
 }

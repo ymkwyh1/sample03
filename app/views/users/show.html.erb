@@ -28,7 +28,9 @@
 
     <div class="profile_pictures">
         <% @posts.each do |post| %>
-            <%= image_tag post.picture, class: 'profile_picture' %>
+            <%= link_to user_timeline_path(user_id: post.user.id) do %>
+                <%= image_tag post.picture, class: 'profile_picture' %>
+            <% end %>
         <% end %>
     </div>
 
