@@ -4,15 +4,15 @@
     position: relative;
 }
 
-.post_new{
+.post{
 
-    &Header{
+    &_header{
         display: flex;
         justify-content: space-between;
     }
 
 
-    &Input{
+    &_input{
         width: 100%;
         margin-top: 30px;
         border: none;
@@ -21,8 +21,12 @@
         font-size: 18px;
     }
 
-    &Submit{
+    &_submit{
         border: none;
+        background-color: white;
+        font-size: 16px;
+        color: #2F80ED;
+        font-weight: bold;
     }
 
     }

@@ -6,13 +6,24 @@ input, select {
         margin: 8px 0px;
         padding: 16px 24px;
         border: none;
-        border-bottom:1px solid $text-base-color ;
+        border-bottom: 1px solid $text-base-color;
         height: 30px;
     }
+
+    &#post_content{
+        margin-bottom: 30px;
+    }
+
+    &#post_picture{
+        display: none;
+    }
+
 }
 
     label {
-        font-size: 12px;
+        font-size: 15px;
+        border: 1px solid #EBEBEB;
+        padding: 4px;
     }
 
     textarea{
