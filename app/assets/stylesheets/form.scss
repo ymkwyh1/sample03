@@ -22,18 +22,24 @@ input, select {
 
     label {
         font-size: 15px;
-        border: 1px solid #EBEBEB;
         padding: 4px;
+
+    }
+
+    .label{
+        &_picture{
+            border: 1px solid #EBEBEB;
+        }
     }
 
     textarea{
         width: 100%;
         margin: 8px 0px;
         padding: 8px 8px;
-        min-height: 440px;
+        min-height: 50px;
         resize: vertical;
-        border: 1px solid #EBEBEB;
-        border-radius: 5px;
+        border: none;
+        border-bottom: 1px solid $text-base-color;
     }
 
     .field{

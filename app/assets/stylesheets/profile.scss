@@ -51,9 +51,20 @@ $avatar-size: 80px;
         object-fit: cover;
     }
 
+    &_name{
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+
     &_introduction{
-        margin-top: 20px;
+        margin-top: 5px;
         margin-bottom: 20px;
+        font-size: 0.95em;
+    }
+
+    &_avatar{
+        border-radius: 100px;
     }
 
     &_edit{
