@@ -74,6 +74,37 @@ $avatar-size: 80px;
         padding-top: 3px;
         padding-bottom: 3px;
         border-radius: 2px;
+
+            &Name{
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+
+            &Intro{
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            &Avatar{
+                border: 1px solid #EBEBEB;
+                width: 24%;
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 30px;
+                margin-top: 10px;
+                text-align: center;
+                padding: 0px;
+            }
+
+            &Header{
+                margin-bottom: 20px;
+                margin-top: -6px;
+            }
+    
     }
 
+
 }
+
+

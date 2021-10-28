@@ -6,7 +6,7 @@ input, select {
         margin: 8px 0px;
         padding: 16px 24px;
         border: none;
-        border-bottom: 1px solid $text-base-color;
+        border-bottom: 1px dotted $text-base-color;
         height: 30px;
     }
 
@@ -16,6 +16,18 @@ input, select {
 
     &#post_picture{
         display: none;
+    }
+
+    &#profile_avatar{
+        display: none;
+    }
+
+    &#profile_introduction.text{
+        text-align: center;
+    }
+
+    &#profile_name.text{
+        text-align: center;
     }
 
 }
