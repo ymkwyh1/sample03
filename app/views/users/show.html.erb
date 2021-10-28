@@ -3,7 +3,9 @@
         <%= link_to root_path  do %> 
             <p class="profile_back">←</p>
         <% end %>
-        <p class="profile_username"><%= current_user.username %></p>
+        <%= link_to destroy_user_session_path, data: { method: 'delete', confirm: 'Log out?' }  do %> 
+            <p class="profile_username"><%= current_user.username %></p>
+        <% end %>
     </div>
 
     <div class="profile_content">
