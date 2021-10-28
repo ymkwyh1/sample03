@@ -1,6 +1,10 @@
 <div class="card">
     <div class="card_avatar">
-        <%= image_tag 'ellipse.png' %>
+        <% if user.profile&.avatar&.attached? %>
+            <%= image_tag user.profile.avatar, class: 'profile_avatar' %>
+        <% else %>
+            <%= image_tag 'ellipse.png' %>
+        <% end %>
     </div>
     <div class="card_username">    
         <%= user.username %>
