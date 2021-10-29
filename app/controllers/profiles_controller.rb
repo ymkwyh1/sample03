@@ -13,9 +13,9 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile || current_user.build_profile
     @profile.assign_attributes(profile_params)
     if @profile.save
-      redirect_to user_path(id: current_user.id), notice: 'プロフィール更新！'
+      redirect_to user_path(id: current_user.id), notice: 'Updated!'
     else
-      flash.now[:error] = '更新できませんでした'
+      flash.now[:error] = 'Failed to update!'
       render :edit
     end
   end
