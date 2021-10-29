@@ -8,5 +8,6 @@ class User < ApplicationRecord
 
   has_many :posts
   has_one :timeline
+  has_one :profile
   
 end

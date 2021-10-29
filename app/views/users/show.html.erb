@@ -3,14 +3,22 @@
         <%= link_to root_path  do %> 
             <p class="profile_back">←</p>
         <% end %>
-        <p class="profile_username"><%= current_user.username %></p>
+        <%= link_to destroy_user_session_path, data: { method: 'delete', confirm: 'Log out?' }  do %> 
+            <p class="profile_username"><%= current_user.username %></p>
+        <% end %>
     </div>
 
     <div class="profile_content">
-        <%= image_tag 'ellipse.png' %>
-        <p><%= current_user.username %></p>
-        <p class="profile_introduction">大阪大学外国語学部2年</p>
-        <p class="profile_edit">Edit profile</p>
+        <% if current_user.profile&.avatar&.attached? %>
+            <%= image_tag current_user.profile.avatar, class: 'profile_avatar' %>
+        <% else %>
+            <%= image_tag 'ellipse.png' %>
+        <% end %>
+        <p class="profile_name"><%= @profile.name || current_user.username %></p>
+        <p class="profile_introduction"><%= @profile&.introduction %></p>
+        <%= link_to edit_profile_path do %>
+            <p class="profile_edit">Edit</p>
+        <% end %>
         <div class="profile_detail">
             <div class="block">
                 <h4><%= @posts.count %></h4>
