@@ -7,6 +7,12 @@
             <%= link_to user_path(id: current_user.id) do %>
                 <p>→</p>
             <% end %>
+        <% else %>
+            <%= link_to new_user_session_path do %>
+                <div class="login_btn">
+                    <p>LOGIN</p>
+                </div>
+            <% end %>
         <% end %>
     </div>
     <%= render 'commons/posts' %>
