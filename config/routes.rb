@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resource :timeline, only: [:show]
   end
 
+  resources :accounts, only: [:show]
+
   resources :posts 
 
   resource :profile 
