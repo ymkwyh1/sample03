@@ -1,1 +1,43 @@
-<%= @user.email %>
+<div class="container">
+    <div class="profile_header">
+        <%= link_to root_path  do %> 
+            <p class="profile_back">←</p>
+        <% end %>
+        <p class="profile_username"><%= @user.username %></p>
+    </div>
+
+    <div class="profile_content">
+        <% if @user.profile&.avatar&.attached? %>
+            <%= image_tag @user.profile.avatar, class: 'profile_avatar' %>
+        <% else %>
+            <%= image_tag 'ellipse.png' %>
+        <% end %>
+        <p class="profile_name"><%= @user.profile&.name || @user.username %></p>
+        <p class="profile_introduction"><%= @user.profile&.introduction %></p>
+        <p class="profile_edit">Follow</p>
+        <div class="profile_detail">
+            <div class="block">
+                <h4><%= @user.posts.count %></h4>
+                <p>Posts</p>
+            </div>
+            <div class="block">
+                <h4>0</h4>
+                <p>Followers</p>
+            </div>
+            <div class="block">
+                <h4>0</h4>
+                <p>Following</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile_pictures">
+        <% @user.posts.each do |post| %>
+            <%= link_to user_timeline_path(user_id: post.user.id) do %>
+                <%= image_tag post.picture, class: 'profile_picture' %>
+            <% end %>
+        <% end %>
+    </div>
+
+
+</div>

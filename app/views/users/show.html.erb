@@ -14,7 +14,7 @@
         <% else %>
             <%= image_tag 'ellipse.png' %>
         <% end %>
-        <p class="profile_name"><%= @profile.name || current_user.username %></p>
+        <p class="profile_name"><%= @profile&.name || current_user.username %></p>
         <p class="profile_introduction"><%= @profile&.introduction %></p>
         <%= link_to edit_profile_path do %>
             <p class="profile_edit">Edit</p>
