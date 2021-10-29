@@ -1,7 +1,13 @@
 <div class="container">
     <div class="home_header">
-        <%= link_to user_path(id: @user.id) do %>
-            <p></p>
+        <%if current_user.id == @user.id %>
+            <%= link_to user_path(id: @user.id) do %>
+                <p>←</p>
+            <% end %>
+        <% else %>
+            <%= link_to account_path(id: @user.id) do %>
+                <p>←</p>
+            <% end %>
         <% end %>
     </div>
     <%= render 'commons/posts' %>
