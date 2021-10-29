@@ -2,7 +2,7 @@
         <% @posts.each do |post| %>
             <div class="post">
                 <%= render 'commons/card', user: post.user %>
-                <% if post.user.id == current_user.id %>
+                <% if current_user && post.user.id == current_user.id %>
                     <div class="dropdown_post">
                         <%= image_tag 'actions.svg', class: 'dropbtn' %>
                         <div class="dropdown-content mini">
