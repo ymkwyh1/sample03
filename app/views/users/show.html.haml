@@ -1,0 +1,29 @@
+.container
+  .profile_header
+    = link_to root_path  do
+      %p.profile_back ←
+    = link_to destroy_user_session_path, data: { method: 'delete', confirm: 'Log out?' }  do
+      %p.profile_username= current_user.username
+  .profile_content
+    - if current_user.profile&.avatar&.attached?
+      = image_tag current_user.profile.avatar, class: 'profile_avatar'
+    - else
+      = image_tag 'ellipse.png'
+    %p.profile_name= @profile&.name || current_user.username
+    %p.profile_introduction= @profile&.introduction
+    = link_to edit_profile_path do
+      %p.profile_edit Edit
+    .profile_detail
+      .block
+        %h4= @posts.count
+        %p Posts
+      .block
+        %h4 0
+        %p Followers
+      .block
+        %h4 0
+        %p Following
+  .profile_pictures
+    - @posts.each do |post|
+      = link_to user_timeline_path(user_id: post.user.id) do
+        = image_tag post.picture, class: 'profile_picture'

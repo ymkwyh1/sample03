@@ -1,0 +1,27 @@
+.container
+  .profile_header
+    = link_to root_path  do
+      %p.profile_back ←
+    %p.profile_username= @user.username
+  .profile_content
+    - if @user.profile&.avatar&.attached?
+      = image_tag @user.profile.avatar, class: 'profile_avatar'
+    - else
+      = image_tag 'ellipse.png'
+    %p.profile_name= @user.profile&.name || @user.username
+    %p.profile_introduction= @user.profile&.introduction
+    %p.profile_edit Follow
+    .profile_detail
+      .block
+        %h4= @user.posts.count
+        %p Posts
+      .block
+        %h4 0
+        %p Followers
+      .block
+        %h4 0
+        %p Following
+  .profile_pictures
+    - @user.posts.each do |post|
+      = link_to user_timeline_path(user_id: post.user.id) do
+        = image_tag post.picture, class: 'profile_picture'

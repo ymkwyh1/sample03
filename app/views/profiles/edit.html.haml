@@ -1,0 +1,22 @@
+.container
+  .profile_editHeader
+    = link_to user_path(id: current_user.id)  do
+      %p.home_back ←
+  %div
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+      %label
+        = f.label :avatar, 'Avatar'
+      %label.profile_editAvatar
+        = f.file_field :avatar
+        ＋ Album
+      %div
+        %label
+          = f.label :name, 'Name'
+        .profile_editName
+          = f.text_field :name, class: 'text'
+      %div
+        %label
+          = f.label :introduction, 'Introduction'
+        .profile_editIntro
+          = f.text_field :introduction, class: 'text'
+      = f.submit 'OK', class: 'btn-primary'
