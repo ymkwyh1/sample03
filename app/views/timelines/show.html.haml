@@ -1,0 +1,9 @@
+.container
+  .home_header
+    - if current_user && current_user.id == @user.id
+      = link_to user_path(id: @user.id) do
+        %p ←
+    - else
+      = link_to account_path(id: @user.id) do
+        %p ←
+  = render 'commons/posts'

@@ -1,0 +1,12 @@
+.container
+  .home_header
+    = link_to new_post_path do
+      %i.fab.fa-instagram
+    - if signed_in?
+      = link_to user_path(id: current_user.id) do
+        %p →
+    - else
+      = link_to new_user_session_path do
+        .login_btn
+          %p LOGIN
+  = render 'commons/posts'

@@ -1,0 +1,11 @@
+.container
+  = form_with(model: @post, local: true) do |f|
+    .post_header
+      = link_to root_path do
+        %p.back ←
+      = f.submit 'Post', class: 'post_submit'
+    = render 'commons/card', user: current_user
+    = f.text_field :content, placeholder: "What's on our mind?", class: "post_input"
+    %label.label_picture
+      ＋ Album
+      \#{f.file_field :picture}

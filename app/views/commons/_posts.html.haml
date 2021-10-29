@@ -1,0 +1,19 @@
+.home_content
+  - @posts.each do |post|
+    .post
+      = render 'commons/card', user: post.user
+      - if current_user && post.user.id == current_user.id
+        .dropdown_post
+          = image_tag 'actions.svg', class: 'dropbtn'
+          .dropdown-content.mini
+            = link_to 'Edit', edit_post_path(id: post.id)
+            = link_to 'Delete', post_path(id: post.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+      %div
+        - if post.picture.present?
+          = image_tag post.picture, class: 'picture'
+        .buttons
+          = image_tag 'heart.png'
+          = image_tag 'comment.png'
+          = image_tag 'share.png'
+        .post_content
+          = post.content
