@@ -53,5 +53,24 @@
         }
     }
 
+    &_date{
+        font-weight: bold;
+        font-size: 11px;
+        position: absolute;
+        right: 20px;
+        top: 0px
+    }
+
 
     }
+
+.buttons{
+    display: block;
+    display: flex;
+    position: relative;
+    a{
+        margin-right: 20px;
+        margin-left: 5px;
+        width: 8%;
+    }
+}

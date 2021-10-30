@@ -18,6 +18,8 @@
             = image_tag 'comment.png', class: 'button'
           = link_to do
             = image_tag 'share.png', class: 'button'
+          .post_date
+            = post.display_created_at
         .post_content
           = post.content
         - if post.comments.present?
