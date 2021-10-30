@@ -41,9 +41,11 @@
 }
 
 .buttons{
+    display: block;
     display: flex;
-    width:35%;
-    img{
-        margin-right: 18px
+    a{
+        margin-right: 20px;
+        margin-left: 5px;
+        width: 8%;
     }
 }

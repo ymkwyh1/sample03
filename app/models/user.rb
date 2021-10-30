@@ -7,6 +7,7 @@ class User < ApplicationRecord
          validates :username, uniqueness: true
 
   has_many :posts
+  has_many :comments
   has_one :timeline
   has_one :profile
   

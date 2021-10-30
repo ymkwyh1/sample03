@@ -32,8 +32,26 @@
 
     &_content{
         text-align: left;
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
-  
+    &_comments{
+        margin-top: 5px;
+    }
+
+    &_comment{
+        text-align: left;
+        display: flex;
+        font-size: 13px;
+
+        &_username{
+            font-weight: bold;
+        }
+
+        &_text{
+            margin-left: 8px;
+        }
+    }
+
+
     }
