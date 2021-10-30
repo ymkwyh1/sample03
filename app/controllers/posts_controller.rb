@@ -1,6 +1,7 @@
 class PostsController < ApplicationController 
 
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+    before_action :set_post, only: [:edit, :update, :destroy]
 
     def index
         @posts = Post.all
@@ -21,11 +22,9 @@ class PostsController < ApplicationController
     end
 
     def edit
-        @post = current_user.posts.find_by(id: params[:id])
     end
 
     def update
-        @post = current_user.posts.find_by(id: params[:id])
         if @post.update(post_params)
             redirect_to posts_path, notice: 'Updated!'
         else
@@ -35,7 +34,6 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        @post = current_user.posts.find_by(id: params[:id])
         if @post.destroy!
         redirect_to posts_path, notice: 'Deleted!'
         end
@@ -44,6 +42,10 @@ class PostsController < ApplicationController
     private
     def post_params
         params.require(:post).permit(:content, :picture)
+    end
+
+    def set_post
+        @post = current_user.posts.find_by(id: params[:id])
     end
 
 end
