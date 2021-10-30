@@ -1,9 +1,6 @@
 class ProfilesController < ApplicationController 
 
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
-
-  def show
-  end
+  before_action :authenticate_user!, only: [:edit, :update]
 
   def edit
     @profile = current_user.profile || current_user.build_profile
