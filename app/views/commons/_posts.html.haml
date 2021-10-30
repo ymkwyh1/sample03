@@ -12,8 +12,25 @@
         - if post.picture.present?
           = image_tag post.picture, class: 'picture'
         .buttons
-          = image_tag 'heart.png'
-          = image_tag 'comment.png'
-          = image_tag 'share.png'
+          = link_to do
+            = image_tag 'heart.png', class: 'button'
+          = link_to post_comments_path(post_id: post.id) do
+            = image_tag 'comment.png', class: 'button'
+          = link_to do
+            = image_tag 'share.png', class: 'button'
         .post_content
           = post.content
+        - if post.comments.present?
+          .post_comments
+            .post_comment
+              .post_comment_username
+                = post.comments.first.user.username
+              .post_comment_text
+                = post&.comments.first.content
+            - if post.comments.second.present?
+              .post_comment
+                .post_comment_username
+                  = post&.comments.second.user.username
+                .post_comment_text
+                  = post&.comments.second.content
+          

@@ -1,0 +1,32 @@
+.comment{
+    
+    &_addBtn{
+    position: absolute;
+    bottom: 20px;
+    margin: 0 auto;
+    width: 91%;
+    }
+
+    &s{
+        margin-top: 50px;
+    }
+
+    &_container{
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    &_text{
+        margin-left: 15px;
+        line-height: 38px;
+    }
+
+    &_avatar{
+        img{
+            border-radius: 500px;
+            width: 10vw;
+            height: 10vw;
+        }
+    }
+
+}

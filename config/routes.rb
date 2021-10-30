@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :accounts, only: [:show]
 
   resources :posts do
-    resources :comments, only: [:show, :new, :create]
+    resources :comments, only: [:index, :new, :create]
   end
 
   resource :profile 
