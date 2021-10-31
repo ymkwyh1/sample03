@@ -68,9 +68,14 @@
     display: block;
     display: flex;
     position: relative;
-    a{
-        margin-right: 20px;
-        margin-left: 5px;
-        width: 8%;
+    
+    a, img{
+            width:7vw;
+            height:7vw;
+        }
+    
+    a {
+        margin-left: 15px;
     }
+
 }
