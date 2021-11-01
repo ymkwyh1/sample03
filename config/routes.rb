@@ -5,9 +5,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resource :timeline, only: [:show]
+    resource :follower, only: [:show]
+    resource :following, only: [:show]
   end
 
-  resources :accounts, only: [:show]
+  resources :accounts, only: [:show] do
+    resource :follows, only: [:create]
+    resource :unfollows, only: [:create]
+  end
 
   resources :posts do
     resources :comments, only: [:index, :new, :create]

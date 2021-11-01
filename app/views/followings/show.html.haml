@@ -1,0 +1,7 @@
+.container 
+  .profile_header
+    = link_to account_path(id: @user.id)  do
+      %p.profile_back ←
+    %p.profile_username Followings
+  - @followings.each do |following|
+    = render 'commons/card', user: following

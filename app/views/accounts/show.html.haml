@@ -10,16 +10,24 @@
       = image_tag 'ellipse.png'
     %p.profile_name= @user.profile&.name || @user.username
     %p.profile_introduction= @user.profile&.introduction
-    %p.profile_edit Follow
+    %p.profile_edit
+      - if current_user&.has_followed?(@user)
+        = link_to account_unfollows_path(account_id: @user.id), data: { method: 'post'} do
+          Unfollow
+      - else
+        = link_to account_follows_path(account_id: @user.id), data: { method: 'post'} do
+          Follow
     .profile_detail
       .block
         %h4= @user.posts.count
         %p Posts
       .block
-        %h4 0
+        = link_to user_follower_path(user_id: @user.id) do
+          %h4= @user.followers.count
         %p Followers
       .block
-        %h4 0
+        = link_to user_following_path(user_id: @user.id) do
+          %h4= @user.followings.count
         %p Following
   .profile_pictures
     - @user.posts.each do |post|
