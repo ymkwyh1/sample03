@@ -2,6 +2,15 @@
   .profile_header.comment_header
     = link_to root_path do
       %p.profile_back ←
+
+  %div.mt30
+    = render 'commons/card', user: @post.user
+
+  %div
+    = image_tag @post.picture, class: 'picture'
+  .buttons#post-show{data: {post_id: @post.id}}
+    = image_tag 'heart-active.svg', class: 'like-button hidden active-heart'
+    = image_tag 'heart.svg', class: 'like-button hidden inactive-heart'
   .comments
     - @comments.each do |comment|
       %div.comment_container

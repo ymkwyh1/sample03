@@ -22,3 +22,23 @@
     padding: 3px 6px;
     padding-top: 8px;
 }
+
+.buttons{
+    position: relative;
+}
+
+.like-button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.view-btn{
+    position: absolute;
+    top: -5px;
+    background-color: #2F80ED;
+    color: white;
+    font-weight: bold;
+    padding: 3px 12px;
+    border-radius: 3px;
+}
