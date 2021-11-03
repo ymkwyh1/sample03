@@ -1,0 +1,19 @@
+.container
+  .profile_header.comment_header
+    = link_to root_path do
+      %p.profile_back ←
+
+  %div.mt30
+    = render 'commons/card', user: @post.user
+
+  %div
+    = image_tag @post.picture, class: 'picture'
+  .buttons#post-show{data: {post_id: @post.id}}
+    = image_tag 'heart-active.svg', class: 'like-button hidden active-heart'
+    = image_tag 'heart.svg', class: 'like-button hidden inactive-heart'
+  .comments
+    .comments-container
+   
+  = link_to new_post_comment_path(post_id: params[:post_id]) do
+    %p.btn-primary.comment_addBtn Comment
+    

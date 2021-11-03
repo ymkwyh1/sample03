@@ -12,31 +12,25 @@
         - if post.picture.present?
           = image_tag post.picture, class: 'picture'
         .buttons
-          - if current_user && current_user.has_liked?(post)
-            = link_to post_like_path(post_id: post.id), data: { method: 'delete' } do
-              = image_tag 'heart-active.svg', class: 'button'
-          - else 
-            = link_to post_like_path(post_id: post.id), data: { method: 'post' } do
-              = image_tag 'heart.svg', class: 'button'
           = link_to post_comments_path(post_id: post.id) do
-            = image_tag 'comment.png', class: 'button'
-          = link_to do
-            = image_tag 'share.png', class: 'button'
+            %p.view-btn view
           .post_date
             = post.display_created_at
         .post_content
           = post.content
         - if post.comments.present?
           .post_comments
-            .post_comment
+            .post_comment_show
               .post_comment_username
-                = post.comments.first.user.username
+                = link_to account_path(id: post.comments.first.user.id) do
+                  = post&.comments.first.user.username
               .post_comment_text
                 = post&.comments.first.content
             - if post.comments.second.present?
-              .post_comment
+              .post_comment_show
                 .post_comment_username
-                  = post&.comments.second.user.username
+                  = link_to account_path(id: post.comments.second.user.id) do
+                    = post&.comments.second.user.username
                 .post_comment_text
                   = post&.comments.second.content
           

@@ -3,7 +3,7 @@
 .card{
 
     display: flex;
-    margin-top: 20px;
+    margin-top: 50px;
 
     &_avatar{
         height: 50px;
@@ -63,4 +63,10 @@
 
 .dropdown_post:hover .dropdown-content {
     display: block;
+}
+
+.picture{
+    height: 91vw;
+    object-fit: cover;
+    margin-top: 15px;
 }
