@@ -1,0 +1,7 @@
+.container 
+  .profile_header
+    = link_to account_path(id: current_user.id)  do
+      %p.profile_back ←
+    %p.profile_username Favorites
+
+    = render 'commons/posts'

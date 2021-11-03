@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resource :timeline, only: [:show]
+    resource :favorite, only: [:show]
     resource :follower, only: [:show]
     resource :following, only: [:show]
   end
