@@ -4,6 +4,8 @@
       %p.profile_back ←
     = link_to destroy_user_session_path, data: { method: 'delete', confirm: 'Log out?' }  do
       %p.profile_username= current_user.username
+    = link_to user_favorite_path(user_id: current_user.id) do
+      = image_tag 'heart.svg', class: 'favorite-btn'
   .profile_content
     - if current_user.profile&.avatar&.attached?
       = image_tag current_user.profile.avatar, class: 'profile_avatar'
