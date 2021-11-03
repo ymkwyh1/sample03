@@ -20,14 +20,14 @@
           = post.content
         - if post.comments.present?
           .post_comments
-            .post_comment
+            .post_comment_show
               .post_comment_username
                 = link_to account_path(id: post.comments.first.user.id) do
                   = post&.comments.first.user.username
               .post_comment_text
                 = post&.comments.first.content
             - if post.comments.second.present?
-              .post_comment
+              .post_comment_show
                 .post_comment_username
                   = link_to account_path(id: post.comments.second.user.id) do
                     = post&.comments.second.user.username

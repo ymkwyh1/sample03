@@ -12,26 +12,12 @@
     = image_tag 'heart-active.svg', class: 'like-button hidden active-heart'
     = image_tag 'heart.svg', class: 'like-button hidden inactive-heart'
   .comments
-    - @comments.each do |comment|
-      %div.comment_container
-        %div.comment_avatar
-          - if comment.user.profile&.avatar&.attached?
-            - if current_user && comment.user.id == current_user.id
-              = link_to user_path(id: current_user.id) do
-                = image_tag comment.user.profile.avatar, class: 'profile_avatar'
-            - else
-              = link_to account_path(id: comment.user.id) do
-                = image_tag comment.user.profile.avatar, class: 'profile_avatar'
-          - else
-            - if current_user && comment.user.id == current_user.id
-              = link_to user_path(id: current_user.id) do
-                = image_tag 'ellipse.png', class: 'profile_avatar'
-            - else
-              = link_to account_path(id: comment.user.id) do
-                = image_tag 'ellipse.png', class: 'profile_avatar'
-        %div.comment_text
-          = comment.content
-  = link_to new_post_comment_path(post_id: params[:post_id]) do
+    .comment-container
+
+  %p.btn-primary.show-comment-form Comment
+  .div.hidden.comment-form
+    .comment-text-area
+      = text_area_tag :comment_content, '', class: 'comment_form'
     %p.btn-primary.comment_addBtn Comment
     
 
