@@ -5,8 +5,6 @@ import { csrfToken } from 'rails-ujs'
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
 
-
-
 const handleHeartDisplay = (hasLiked) => {
   if (hasLiked){
     $('.active-heart').removeClass('hidden')
@@ -14,6 +12,18 @@ const handleHeartDisplay = (hasLiked) => {
     $('.inactive-heart').removeClass('hidden')
   }
 }
+
+const like = () => {
+    $('.active-heart').removeClass('hidden')
+    $('.inactive-heart').addClass('hidden')
+}
+
+const unlike = () => {
+    $('.inactive-heart').removeClass('hidden')
+    $('.active-heart').addClass('hidden')
+}
+
+
 
 document.addEventListener('turbolinks:load', () => {
   const dataset = $('#post-show').data()
@@ -30,8 +40,7 @@ document.addEventListener('turbolinks:load', () => {
       axios.post(`/posts/${postId}/like`)
         .then((response) => {
           if (response.data.status === 'ok') {
-            $('.active-heart').removeClass('hidden')
-            $('.inactive-heart').addClass('hidden')
+            like()
           }
         })
         .catch((e) => {
@@ -44,8 +53,7 @@ document.addEventListener('turbolinks:load', () => {
       axios.delete(`/posts/${postId}/like`)
         .then((response) => {
           if (response.data.status === 'ok') {
-            $('.inactive-heart').removeClass('hidden')
-            $('.active-heart').addClass('hidden')
+            unlike()
           }
         })
         .catch((e) => {

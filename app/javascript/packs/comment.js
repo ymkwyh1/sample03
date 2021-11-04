@@ -4,16 +4,26 @@ import { csrfToken } from 'rails-ujs'
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
 
+const handleCommentForm = () => {
+  $('.show-comment-form').on('click', () => {
+     $('.show-comment-form').addClass('hidden')
+      $('.comment-form').removeClass('hidden')
+  })
+}
+
+const appendNewComment = (comment) => {
+  $('.comment-container').append(
+    `<div class="post_comment"><p>${comment.content}</p></div>`
+   )
+}
+
 
 document.addEventListener('turbolinks:load', () => {
   const dataset = $('#post-show').data()
   const postId = dataset.postId
 
-  $('.show-comment-form').on('click', () => {
-     $('.show-comment-form').addClass('hidden')
-      $('.comment-form').removeClass('hidden')
-  })
-
+  handleCommentForm()
+  
   $('.comment_addBtn').on('click', () => {
     const content = $('#comment_content').val()
     if (!content) {
@@ -24,9 +34,7 @@ document.addEventListener('turbolinks:load', () => {
       })
       .then((res) => {
         const comment = res.data
-        $('.comment-container').append(
-        `<div class="post_comment"><p>${comment.content}</p></div>`
-      )
+        appendNewComment(comment)
         $('#comment_content').val('')
       })
     }
@@ -37,9 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   .then((response) => {
     const comments = response.data
     comments.forEach((comment) => {
-      $('.comment-container').append(
-        `<div class="post_comment"><p>${comment.content}</p></div>`
-      )
+      appendNewComment(comment)
     })
   })
 
