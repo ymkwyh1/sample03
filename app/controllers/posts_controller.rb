@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     def show
         @post = Post.find_by(id: params[:id])
         comments = @post.comments
+
         render json: comments
     end
 
@@ -43,6 +44,7 @@ class PostsController < ApplicationController
     end
 
     private
+    
     def post_params
         params.require(:post).permit(:content, :picture)
     end

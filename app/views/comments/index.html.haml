@@ -19,6 +19,9 @@
     .comment-text-area
       = text_area_tag :comment_content, '', class: 'comment_form'
     %p.btn-primary.comment_addBtn Comment
+
+    = javascript_pack_tag 'like'
+    = javascript_pack_tag 'comment'
     
 
 
