@@ -18,7 +18,7 @@ const appendNewComment = (comment) => {
 }
 
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#post-show').data()
   const postId = dataset.postId
 

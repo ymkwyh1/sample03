@@ -25,7 +25,7 @@ const unlike = () => {
 
 
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#post-show').data()
   const postId = dataset.postId
 
@@ -44,8 +44,7 @@ document.addEventListener('turbolinks:load', () => {
           }
         })
         .catch((e) => {
-          window.alert('Error')
-          console.log(e)
+          error()
         })
     })
 
@@ -57,8 +56,7 @@ document.addEventListener('turbolinks:load', () => {
           }
         })
         .catch((e) => {
-          window.alert('Error')
-          console.log(e)
+          error()
         })
     })
 

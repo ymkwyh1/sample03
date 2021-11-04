@@ -10,26 +10,25 @@
       = image_tag 'ellipse.png'
     %p.profile_name= @user.profile&.name || @user.username
     %p.profile_introduction= @user.profile&.introduction
-    %p.profile_edit
-      - if current_user&.has_followed?(@user)
-        = link_to account_unfollows_path(account_id: @user.id), data: { method: 'post'} do
-          Unfollow
-      - else
-        = link_to account_follows_path(account_id: @user.id), data: { method: 'post'} do
-          Follow
+    %div.profile_edit.follow_status#account-show{data: {account_id: @user.id}}
+      %p.follow.hidden Follow
+      %p.unfollow.hidden Unfollow
+     
     .profile_detail
       .block
         %h4= @user.posts.count
         %p Posts
       .block
         = link_to user_follower_path(user_id: @user.id) do
-          %h4= @user.followers.count
+          %h4.followers_count= @user.followers.count
         %p Followers
       .block
         = link_to user_following_path(user_id: @user.id) do
-          %h4= @user.followings.count
+          %h4.followings_count= @user.followings.count
         %p Following
   .profile_pictures
     - @user.posts.each do |post|
       = link_to user_timeline_path(user_id: post.user.id) do
         = image_tag post.picture, class: 'profile_picture'
+
+  = javascript_pack_tag 'follow'
