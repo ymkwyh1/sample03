@@ -5,6 +5,9 @@
 
   %div.mt30
     = render 'commons/card', user: @post.user
+  
+  %div.share-btn
+    = link_to 'Twitter', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' 
 
   %div
     = image_tag @post.picture, class: 'picture'
