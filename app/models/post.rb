@@ -5,6 +5,7 @@ class Post < ApplicationRecord
     has_one_attached :picture
 
     validates :picture, presence: true
+    validates :content, presence: true
 
     def display_created_at
         I18n.l(self.created_at, format: :default)
